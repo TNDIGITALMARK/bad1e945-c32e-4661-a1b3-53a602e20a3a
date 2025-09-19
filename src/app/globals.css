@@ -5,33 +5,41 @@ All colors MUST be HSL.
 */
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
+  /* Earrings & Things Brand Colors */
+  --sage-green: 87 13% 54%; /* #7A8C7E */
+  --warm-sand: 42 35% 76%; /* #D9C0A3 */
+  --terra-cotta: 17 51% 59%; /* #D17F5A */
+  --soft-white: 45 29% 97%; /* #F8F5F2 */
+  --warm-gray: 48 8% 57%; /* #8A8072 */
 
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  /* Main theme variables using brand colors */
+  --background: 45 29% 97%; /* Soft White */
+  --foreground: 48 8% 25%; /* Darker Warm Gray */
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
+  --card: 45 29% 97%;
+  --card-foreground: 48 8% 25%;
 
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
+  --popover: 45 29% 97%;
+  --popover-foreground: 48 8% 25%;
 
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
+  --primary: 87 13% 54%; /* Sage Green */
+  --primary-foreground: 45 29% 97%;
 
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --secondary: 42 35% 76%; /* Warm Sand */
+  --secondary-foreground: 48 8% 25%;
 
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
+  --muted: 42 35% 85%; /* Lighter Warm Sand */
+  --muted-foreground: 48 8% 57%;
+
+  --accent: 17 51% 59%; /* Terra Cotta */
+  --accent-foreground: 45 29% 97%;
 
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
+  --border: 42 35% 85%;
+  --input: 42 35% 85%;
+  --ring: 87 13% 54%;
 
   --radius: 0.5rem;
 
@@ -46,33 +54,34 @@ All colors MUST be HSL.
 }
 
 .dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
+  /* Dark theme using brand colors */
+  --background: 48 8% 15%; /* Dark Warm Gray */
+  --foreground: 45 29% 97%; /* Soft White */
 
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
+  --card: 48 8% 20%;
+  --card-foreground: 45 29% 97%;
 
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
+  --popover: 48 8% 20%;
+  --popover-foreground: 45 29% 97%;
 
-  --primary: 210 40% 98%;
-  --primary-foreground: 222.2 47.4% 11.2%;
+  --primary: 87 13% 54%; /* Sage Green */
+  --primary-foreground: 45 29% 97%;
 
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 48 8% 25%;
+  --secondary-foreground: 42 35% 76%;
 
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
+  --muted: 48 8% 25%;
+  --muted-foreground: 42 35% 76%;
 
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
+  --accent: 17 51% 59%; /* Terra Cotta */
+  --accent-foreground: 45 29% 97%;
 
   --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive-foreground: 45 29% 97%;
 
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 212.7 26.8% 83.9%;
+  --border: 48 8% 25%;
+  --input: 48 8% 25%;
+  --ring: 87 13% 54%;
   --sidebar-background: 240 5.9% 10%;
   --sidebar-foreground: 240 4.8% 95.9%;
   --sidebar-primary: 224.3 76.3% 48%;
@@ -160,4 +169,62 @@ All colors MUST be HSL.
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
+}
+
+/* Custom font imports for Earrings & Things branding */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Caveat:wght@400;500;600;700&display=swap');
+
+/* Typography utilities */
+.font-heading {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.font-body {
+  font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
+}
+
+.font-accent {
+  font-family: "Caveat", cursive;
+}
+
+/* Custom brand color utilities */
+.text-sage {
+  color: hsl(var(--sage-green));
+}
+
+.text-sand {
+  color: hsl(var(--warm-sand));
+}
+
+.text-terra {
+  color: hsl(var(--terra-cotta));
+}
+
+.text-soft-white {
+  color: hsl(var(--soft-white));
+}
+
+.text-warm-gray {
+  color: hsl(var(--warm-gray));
+}
+
+.bg-sage {
+  background-color: hsl(var(--sage-green));
+}
+
+.bg-sand {
+  background-color: hsl(var(--warm-sand));
+}
+
+.bg-terra {
+  background-color: hsl(var(--terra-cotta));
+}
+
+.bg-soft-white {
+  background-color: hsl(var(--soft-white));
+}
+
+.bg-warm-gray {
+  background-color: hsl(var(--warm-gray));
 }

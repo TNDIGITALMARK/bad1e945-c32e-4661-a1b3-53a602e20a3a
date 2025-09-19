@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { QueryProvider } from "@/components/query-provider";
+import { CartProvider } from "@/contexts/cart-context";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "Earrings & Things | Handcrafted Nature-Inspired Jewelry",
+  description: "Discover our bohemian treasure trove of handcrafted jewelry, where each piece tells a story of nature's beauty and artisanal excellence.",
 };
 
 export default function RootLayout({
@@ -35,15 +36,17 @@ export default function RootLayout({
         <QueryProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
-            <TooltipProvider>
-              {children}
-              <Toaster />
-              <Sonner />
-            </TooltipProvider>
+            <CartProvider>
+              <TooltipProvider>
+                {children}
+                <Toaster />
+                <Sonner />
+              </TooltipProvider>
+            </CartProvider>
           </ThemeProvider>
         </QueryProvider>
       </body>
